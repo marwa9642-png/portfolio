@@ -85,3 +85,58 @@ document.querySelector('.contact-form').addEventListener('submit', function(e) {
         alert("message is submitted");
     }
 });
+// 1. Hamburger Menu Toggle Logic (قائمة الموبايل)
+const hamburgerBtn = document.getElementById('hamburger-btn');
+const navLinks = document.getElementById('nav-links');
+const menuIcon = document.getElementById('menu-icon');
+
+if (hamburgerBtn && navLinks && menuIcon) {
+    hamburgerBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        if (navLinks.classList.contains('active')) {
+            menuIcon.classList.remove('fa-bars');
+            menuIcon.classList.add('fa-xmark');
+        } else {
+            menuIcon.classList.remove('fa-xmark');
+            menuIcon.classList.add('fa-bars');
+        }
+    });
+
+    document.querySelectorAll('#nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            menuIcon.classList.remove('fa-xmark');
+            menuIcon.classList.add('fa-bars');
+        });
+    });
+}
+
+// 2. Dark / Light Mode Toggle Logic (إصلاح زر القمر والشمس ليعمل فوراً وعند الـ Refresh)
+const themeToggleBtn = document.getElementById('theme-toggle');
+const themeIcon = document.getElementById('theme-icon');
+
+if (themeToggleBtn && themeIcon) {
+    // التحقق من الوضع المحفوظ مسبقاً عند فتح أو تحديث الصفحة (Refresh)
+    const savedTheme = localStorage.getItem('theme');
+    
+    if (savedTheme === 'light') {
+        document.body.classList.add('light-mode');
+        themeIcon.className = 'fa-solid fa-sun'; // عرض الشمس في اللايت مود
+    } else {
+        document.body.classList.remove('light-mode');
+        themeIcon.className = 'fa-solid fa-moon'; // عرض القمر في الدارك مود
+    }
+
+    // الحدث عند الضغط على الزر
+    themeToggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+
+        if (document.body.classList.contains('light-mode')) {
+            themeIcon.className = 'fa-solid fa-sun';
+            localStorage.setItem('theme', 'light');
+        } else {
+            themeIcon.className = 'fa-solid fa-moon';
+            localStorage.setItem('theme', 'dark');
+        }
+    });
+}

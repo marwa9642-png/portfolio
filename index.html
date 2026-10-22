@@ -7,75 +7,91 @@
     <link rel="shortcut icon" href="images/favicon.jpg" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inder&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inder&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-   <header>
+  <header>
     <nav>
         <div class="Logo">
-        <img src="images/logo.png" height="50px" width="50px">
-        <a href="#" class="logo">Marwa Ebrihem</a>
+            <img src="images/logo.png" height="50px" width="50px" alt="logo">
+            <a href="#" class="logo">Marwa Ebrihem</a>
         </div>
-        <ul>
+
+
+        <!-- قائمة الروابط -->
+        <ul id="nav-links">
             <li><a href="#">Home</a></li>
             <li><a href="#about">About me</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact US</a></li>
         </ul>
+        
+        <!-- أزرار التحكم العليا بنفس ديزاين الصورة -->
+        <div class="nav-controls">
+            <!-- زرار الـ Theme Toggle (الزرار المربع الأول) -->
+            <button id="theme-toggle" class="nav-btn" aria-label="Toggle Theme">
+                <i class="fa-solid fa-sun" id="theme-icon"></i>
+            </button>
+
+            <!-- زرار الهامبرغر / الإكس (الزرار المربع الثاني) -->
+            <button class="hamburger nav-btn" id="hamburger-btn" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars" id="menu-icon"></i>
+            </button>
+        </div>
     </nav>
-   </header> 
+   </header>
+
    <section class="home-con">
-<div class="hero-content">
-    <h1>frontend <br>developer</h1>
-    <p>i am marwa-<span class="highlight">Web-developer. </span>with a person for<br> creating beautiful and responsive Websites.</p>
- <div class="hero-btn">
-    <a href="#about" class="btn-about"><i class="fa-solid fa-user" style="color: #ffffff;margin-right: 5px;"></i>About me</a>
-    <a href="#projects" class="btn-projects"><i class="fa-solid fa-laptop-code" style="color: #ffffff;margin-right: 5px;"></i>Projects</a>
- </div>
- <div class="img">
-    <img src="images/profile.png" alt="marwa ebrihem software engineer">
- </div>
-</div>
+        <div class="hero-content">
+            <h1>frontend <br>developer</h1>
+            <p>i am marwa-<span class="highlight">Web-developer. </span>with a person for<br> creating beautiful and responsive Websites.</p>
+            <div class="hero-btn">
+                <a href="#about" class="btn-about"><i class="fa-solid fa-user" style="color: #ffffff;margin-right: 5px;"></i>About me</a>
+                <a href="#projects" class="btn-projects"><i class="fa-solid fa-laptop-code" style="color: #ffffff;margin-right: 5px;"></i>Projects</a>
+            </div>
+            <div class="img">
+                <img src="images/profile.png" alt="marwa ebrihem software engineer">
+            </div>
+        </div>
    </section>
-   <hr>
-   <section class="about" id="about">
-      <h2 class="card-title">About me</h2>
+
+   <!-- About Section -->
+   <h2 class="card-title" id="about">About me</h2>
+   <section class="about">
       <div class="time-line card1">
          <div class="card-header">
             <i class="fa-solid fa-laptop-code"></i>
             <h3>Website Development</h3>
          </div>
-      <p  class="about-card">I am Marwa Ibrahim, a passionate Software Engineering student and Frontend Developer, building modern webs.</p>
-         </div>
+         <p class="about-card">I am Marwa Ibrahim, a passionate Software Engineering student and Frontend Developer, building modern webs.</p>
+      </div>
 
-            <div class="time-line card2">
+      <div class="time-line card2">
          <div class="card-header">
             <i class="fa-solid fa-pen-nib"></i>
             <h3>Web Design3+</h3>
          </div>
-      <p  class="about-card">I bridge the gap between design and deployment, crafting websites that are both beautiful and responsive.</p>
-            </div>
-
-            
+         <p class="about-card">I bridge the gap between design and deployment, crafting websites that are both beautiful and responsive.</p>
+      </div>
+             
       <div class="time-line card3">
          <div class="card-header">
             <i class="fa-solid fa-code-branch"></i>
             <h3>Clean Code & Architecture</h3>
          </div>
-      <p  class="about-card">My focus is on clean code and robust architecture to deliver excellent user experiences.</p>
+         <p class="about-card">My focus is on clean code and robust architecture to deliver excellent user experiences.</p>
       </div>
    </section>
-   <hr>
-<section class="skills" id="skills">
-    <h2>Skills</h2>
+
+   <!-- Skills Section -->
+   <h2 class="skills-title" id="skills">Skills</h2>
+   <section class="skills">
     <p class="skills-subtitle">The skills, tools and technologies I use:</p>
     
     <div class="skills-grid">
-
         <div class="skills-row">
             <img src="images/html.svg" alt="html5">
             <img src="images/css3.svg" alt="css3">
@@ -92,19 +108,17 @@
             <img src="images/c.png" alt="c">
         </div>
     </div>
-</section>
-<hr>
-<section class="projects-section" id="projects">
-    <div class="projects-sidebar">
-        <h2 class="section-title">Projects</h2>
-    </div>
+   </section>
+
+   <!-- Projects Section -->
+       <h2 class="section-title">Projects</h2>
+   <section class="projects-section" id="projects">
     <div class="projects-content">
         <p class="projects-intro">
             A selection of my recent works ranging from frontend platforms to IoT and AI-driven hardware projects.
         </p>
 
         <div class="projects-grid">
-
             <div class="project-card">
                 <div>
                     <div class="card-header">
@@ -112,10 +126,10 @@
                         <i class="fa-solid fa-rocket" style="color: #c084fc;"></i>
                     </div>
                     <h3 class="project-title">Nexify Landing Page</h3>
-                  
                     <img src="images/Nexify.png" alt="Nexify" class="project-img">
                     <p class="project-description">
                        A highly responsive and visually appealing landing page tailored for a tech startup, showcasing interactive statistics, client testimonials, and an elegant dark theme design.
+                    </p>
                     <div class="tech-stack">
                         <span class="tech-tag">HTML5</span>
                         <span class="tech-tag">CSS3</span>
@@ -199,11 +213,9 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
-</section>
-<hr>
+   </section>
 <section class="contact-section" id="contact">
     <div class="contact-container">
         
@@ -256,7 +268,8 @@
                 <button type="submit" class="btn-send">SEND</button>
             </form>
 </section>
- <button  id="scr"><i class="fa-solid fa-circle-arrow-up fa-lg" ;></i></button>
+
+   <button id="scr"><i class="fa-solid fa-circle-arrow-up fa-lg"></i></button>
    <footer>&copy;2026-All rights reserved,web design and development-Marwa Ebrihem</footer>
    <script src="script.js"></script>
 </body>
